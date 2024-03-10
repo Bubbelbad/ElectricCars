@@ -1,4 +1,5 @@
-﻿using ElectricCarMVVM.ViewModel;
+﻿using ElectricCarMVVM.Models;
+using ElectricCarMVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,10 @@ namespace ElectricCarMVVM.Views
     /// </summary>
     public partial class ViewCar : Window
     {
-        public ViewCar()
+        public ViewCar(CarProxy proxy)
         {
             InitializeComponent();
-            ViewCarViewModel viewModel = new ViewCarViewModel();
+            ViewCarViewModel viewModel = new ViewCarViewModel(proxy);
             this.DataContext = viewModel;
         }
     }

@@ -35,7 +35,7 @@ namespace ElectricCarMVVM
 
         private void CarList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            viewModel.ShowViewCarWindowCommand.Execute(this);
+            viewModel.ShowViewCarWindowCommand.Execute(CarList.SelectedItem);
         }
 
         private void FilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -47,7 +47,6 @@ namespace ElectricCarMVVM
         {
             var car = (CarProxy)obj;
             return car.ModelName.Contains(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase);
-
         }
     }
 }

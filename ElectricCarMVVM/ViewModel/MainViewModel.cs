@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ElectricCarMVVM.Views;
 using System.Windows;
+using ElectricCarMVVM.Models.SortingAlgorithms;
+using System.Collections.ObjectModel;
 
 namespace ElectricCarMVVM.ViewModel
 {
     public class MainViewModel
     {
-        public List<CarProxy> CarProxyList { get; set; }
+        public ObservableCollection<CarProxy> CarProxyList { get; set; }
         public ICommand ShowAddCarWindowCommand { get; set; }
         public ICommand ShowViewCarWindowCommand { get; set; }
+        public ICommand SortByBrandCommand { get; set; }
 
         public MainViewModel()
         {
@@ -23,6 +26,8 @@ namespace ElectricCarMVVM.ViewModel
             CarProxyList = db.GetProxy();
             ShowAddCarWindowCommand = new RelayCommand(ShowAddCarWindow, CanShowWindow);
             ShowViewCarWindowCommand = new RelayCommand(ShowViewCarWindow, CanShowWindow);
+            SortByBrandCommand = new RelayCommand(SortByBrand, CanShowWindow);
+
         }
 
         private bool CanShowWindow(object obj)
@@ -42,10 +47,17 @@ namespace ElectricCarMVVM.ViewModel
         private void ShowViewCarWindow(object obj)
         {
             var mainWindow = obj as Window;
-            ViewCar viewCarWin = new ViewCar();
+            ViewCar viewCarWin = new ViewCar((CarProxy)obj);
             viewCarWin.Owner = mainWindow;
             viewCarWin.WindowStartupLocation= WindowStartupLocation.CenterOwner;
             viewCarWin.Show();
+        }
+
+        private void SortByBrand(object obj)
+        {
+            InsertionSort sorter = new InsertionSort();
+            //sorter.
+            MessageBox.Show("We got here");
         }
     }
 }

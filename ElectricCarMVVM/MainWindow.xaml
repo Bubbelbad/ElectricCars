@@ -14,13 +14,13 @@
             <Label Content="Sort by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,35,0,0"/>
             <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0">
                 <Menu>
-                    <MenuItem Header="Brand"/>
+                    <MenuItem Header="Brand" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByBrandCommand}"/>
                     <MenuItem Header="Price"/>
                     <MenuItem Header="Milage"/>
                 </Menu>
             </ComboBox>
             
-            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0" MouseDoubleClick="CarList_MouseDoubleClick">
+            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0" MouseDoubleClick="CarList_MouseDoubleClick" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand" Width="100" />

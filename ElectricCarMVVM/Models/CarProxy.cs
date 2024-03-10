@@ -48,28 +48,28 @@ namespace ElectricCarMVVM.Models
             }
         }
 
-        //  public int BatteryCapacity {
-        //      get {
-        //          Load();
-        //          return car.Milage;
-        //      }
-        //      set {
-        //          Load();
-        //          car.Milage = value;
-        //      }
-        //  }
+          public int BatteryCapacity {
+              get {
+                  Load();
+                  return car.BatteryCapacity;
+              }
+              set {
+                  Load();
+                  car.BatteryCapacity = value;
+              }
+          }
 
         public int BatteryStatus
         {
             get
             {
                 Load();
-                return car.Milage;
+                return car.BatteryStatus;
             }
             set
             {
                 Load();
-                car.Milage = value;
+                car.BatteryStatus = value;
             }
         }
 

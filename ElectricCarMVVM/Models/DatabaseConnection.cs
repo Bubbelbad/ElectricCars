@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,17 @@ namespace ElectricCarMVVM.Models
 
         private static DatabaseConnection _instance;
         private static readonly object _instanceLock = new object();
-        List<Car> cars = new List<Car>();
+        private static List<Car> cars = new List<Car>() { new Car { Id = 0, ModelName = "LEAF", Brand = "Nissan", Price = 13000, Milage = 20, BatteryCapacity = 140, BatteryStatus = 10 },
+                                                          new Car { Id = 1, ModelName = "Ioniq 5", Brand = "Hyundai", Price = 14500, Milage = 20, BatteryCapacity = 140, BatteryStatus = 10 },
+                                                          new Car { Id = 2, ModelName = "EQS", Brand = "Mercedes Benz", Price = 23000, Milage = 20, BatteryCapacity = 140, BatteryStatus = 10 },
+                                                          new Car { Id = 3, ModelName = "Model S Plaid", Brand = "Tesl", Price = 10986, Milage = 20, BatteryCapacity = 140, BatteryStatus = 10 } };
+                                                          
+    
+        private static ObservableCollection<CarProxy> carProxies = new ObservableCollection<CarProxy>() {  };
 
         private DatabaseConnection()
         {
-            cars.Add(new Car(0, "LEAF", "Nissan", 13000, 20, 140, 10));
-            cars.Add(new Car(1, "Ioniq 5" ,"Hyundai", 15000, 30, 90, 90));
-            cars.Add(new Car(2, "EQS", "Mercedes Benz", 16000, 40, 130, 50));
-            cars.Add(new Car(3, "Model S Plaid", "Tesla", 17000, 55, 120, 30));
+
         }
 
         //Instance() will be used to acces the database from everywhere in theprogram
@@ -46,63 +50,42 @@ namespace ElectricCarMVVM.Models
             return _instance;
         }
 
-        public List<CarProxy> GetProxy()
+        public ObservableCollection<CarProxy> GetProxy()
         {
-            List<CarProxy> carProxies = new List<CarProxy>();
-            foreach (Car car in cars)
+            foreach (Car car in  cars)
             {
                 carProxies.Add(new CarProxy(car.ModelName, car.Brand, car.Price));
             }
             return carProxies;
         }
 
-        public void AddCar(Car car)
+       // public List<CarProxy> GetProxy()
+       // {
+       //     List<CarProxy> carProxies = new List<CarProxy>();
+       //     foreach (Car car in cars)
+       //     {
+       //         carProxies.Add(new CarProxy(car.ModelName, car.Brand, car.Price));
+       //     }
+       //     return carProxies;
+       // }
+
+        public void AddCar(Car car, CarProxy proxy)
         {
             cars.Add(car);
+            carProxies.Add(proxy);
         }
 
-        public List<Car> GetCars()
-        {
-            return cars;
-        }
 
-        public Car GetCar(int id)
+        public Car? GetCar(CarProxy proxy)
         {
-            Car car1 = null;
             foreach (Car car in cars)
             {
-                if (id == car.Id)
+                if (proxy.ModelName == car.ModelName)
                 {
-                    car1 = car;
+                    return car;
                 }
             }
-            return car1;
+            return null;
         }
-
-        //  public Car? GetCars()
-        //  {
-        //       cars.Add(new Car("Leaf", 20, 140, 10));
-        //       cars.Add(new Car("Leaf", 30, 90, 90));
-        //       cars.Add(new Car("Leaf", 50, 130, 50));
-        //       cars.Add(new Car("Leaf", 10, 120, 30));
-        //       foreach (Car car in cars)
-        //       {
-        //           return car.ModelName;
-        //       }
-        //       return null;
-        //  }
-
-
-        //  public Car? GetCar(int id)
-        //  {
-        //      foreach (var car in cars)
-        //      {
-        //          if (car.LicensePlate == licensePlate)
-        //          {
-        //              return car;
-        //          }
-        //      }
-        //      return null;
-        //  }
     }
 }
