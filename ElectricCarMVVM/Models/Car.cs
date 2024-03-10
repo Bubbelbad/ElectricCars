@@ -8,6 +8,7 @@ namespace ElectricCarMVVM.Models
 {
     public class Car
     {
+        public int Id { get; set; }
         public string ModelName { get; set; }
         public string Brand { get; set; }
         public int Price { get; set; }
@@ -20,8 +21,9 @@ namespace ElectricCarMVVM.Models
 
         }
 
-        public Car(string modelName, string brand, int price, int milage, int batteryCapacity, int batteryStatus)
+        public Car(int id, string modelName, string brand, int price, int milage, int batteryCapacity, int batteryStatus)
         {
+            this.Id = id;
             this.ModelName = modelName;
             this.Brand = brand;
             this.Price = price;

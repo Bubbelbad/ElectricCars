@@ -13,18 +13,41 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ElectricCarMVVM.Models;
 
 namespace ElectricCarMVVM
 {
     public partial class MainWindow : Window
     {
+        MainViewModel viewModel;
         public MainWindow()
         {
+            //1. Complete AddCar Views and connect it with AddCarCommand / CarBuilder
+            //2. Make View for Car
+            //3. Use SortingAlgorithms for MainViewModel
+
+
             InitializeComponent();
             MainViewModel mainViewModel = new MainViewModel();
+            this.viewModel = mainViewModel;
             this.DataContext = mainViewModel;
         }
 
+        private void CarList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            viewModel.ShowViewCarWindowCommand.Execute(this);
+        }
 
+        private void FilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CarList.Items.Filter = FilterMethod;
+        }
+
+        private bool FilterMethod(object obj)
+        {
+            var car = (CarProxy)obj;
+            return car.ModelName.Contains(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase);
+
+        }
     }
 }

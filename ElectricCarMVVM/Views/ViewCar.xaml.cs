@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace ElectricCarMVVM.Views
 {
     /// <summary>
-    /// Interaction logic for AddCar.xaml
+    /// Interaction logic for ViewCar.xaml
     /// </summary>
-    public partial class AddCar : Window
+    public partial class ViewCar : Window
     {
-        public AddCar()
+        public ViewCar()
         {
             InitializeComponent();
-            AddCarViewModel viewModel = new AddCarViewModel();
+            ViewCarViewModel viewModel = new ViewCarViewModel();
             this.DataContext = viewModel;
         }
     }

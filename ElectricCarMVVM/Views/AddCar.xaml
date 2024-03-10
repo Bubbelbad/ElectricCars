@@ -22,16 +22,24 @@
                 <RowDefinition Height="*" />
 
             </Grid.RowDefinitions>
-            <Label Content="Model name: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Model name: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
             <Label Content="Battery Capacity: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Milage: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Color: " Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding ModelName}" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-           
-           
+
+            <Label Content="Brand:" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Price: " Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Milage: " Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Color: " Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding Brand}" Grid.Column="1" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Column="1" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <Button Content="Add Car" Grid.Column="1" Grid.Row="6" Height="25" Width="75" Command="{Binding AddCarCommand}"/>
 
         </Grid>
     </Grid>

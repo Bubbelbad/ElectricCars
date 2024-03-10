@@ -8,18 +8,27 @@ namespace ElectricCarMVVM.Models
 {
     public class DatabaseConnection
     {
+        /// <summary>
+        /// Fictive singleton database until there is a real database for this project. 
+        /// 
+        /// 
+        /// </summary>
+        /// 
+
+
         private static DatabaseConnection _instance;
         private static readonly object _instanceLock = new object();
         List<Car> cars = new List<Car>();
 
         private DatabaseConnection()
         {
-            cars.Add(new Car("LEAF", "Nissan", 13000, 20, 140, 10));
-            cars.Add(new Car("Ioniq 5" ,"Hyundai", 15000, 30, 90, 90));
-            cars.Add(new Car("EQS", "Mercedes Benz", 16000, 40, 130, 50));
-            cars.Add(new Car("Model S Plaid", "Tesla", 17000, 55, 120, 30));
+            cars.Add(new Car(0, "LEAF", "Nissan", 13000, 20, 140, 10));
+            cars.Add(new Car(1, "Ioniq 5" ,"Hyundai", 15000, 30, 90, 90));
+            cars.Add(new Car(2, "EQS", "Mercedes Benz", 16000, 40, 130, 50));
+            cars.Add(new Car(3, "Model S Plaid", "Tesla", 17000, 55, 120, 30));
         }
 
+        //Instance() will be used to acces the database from everywhere in theprogram
         public static DatabaseConnection Instance()
         {
             //Locking the instance so that it can't be called simultaniously by two instances
@@ -55,6 +64,19 @@ namespace ElectricCarMVVM.Models
         public List<Car> GetCars()
         {
             return cars;
+        }
+
+        public Car GetCar(int id)
+        {
+            Car car1 = null;
+            foreach (Car car in cars)
+            {
+                if (id == car.Id)
+                {
+                    car1 = car;
+                }
+            }
+            return car1;
         }
 
         //  public Car? GetCars()

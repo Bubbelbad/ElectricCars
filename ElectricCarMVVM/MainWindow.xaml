@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricCarMVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000">
+        Title="MainWindow" Height="650" Width="1000"
+        Name="mainwindow">
     <Grid>
         <Grid Margin="25,40,25,15">
-            <TextBox Name="FilterTextBox" Grid.Row="1" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,35" />
-            <Button Height="25" Command="{Binding ShowWindowCommand}" Content="Add Car" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="30,35"/>
+            <TextBox Name="FilterTextBox" TextChanged="FilterTextBox_TextChanged" Grid.Row="1" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,35" />
+            <Button Height="25" CommandParameter="{x:Reference Name=mainwindow}" Command="{Binding ShowAddCarWindowCommand}" Content="Add Car" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="30,35"/>
             <Label Content="Sort by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,35,0,0"/>
             <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0">
                 <Menu>
@@ -19,7 +20,7 @@
                 </Menu>
             </ComboBox>
             
-            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0">
+            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0" MouseDoubleClick="CarList_MouseDoubleClick">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand" Width="100" />

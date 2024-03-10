@@ -8,6 +8,7 @@ namespace ElectricCarMVVM.Models
 {
     public class CarBuilder
     {
+        private int Id { get; set; } = 0;
         private string ModelName { get; set; } = "";
         private string Brand { get; set; } = "";
         private int Price { get; set; } = 0;
@@ -17,6 +18,13 @@ namespace ElectricCarMVVM.Models
 
 
         public CarBuilder(){ }
+
+        public CarBuilder SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
+
 
         public CarBuilder SetModelName(string modelName)
         {
@@ -56,7 +64,7 @@ namespace ElectricCarMVVM.Models
 
         public Car Build()
         {
-            return new Car(ModelName, Brand, Price, Milage, BatteryCapacity, BatteryStatus);
+            return new Car(Id, ModelName, Brand, Price, Milage, BatteryCapacity, BatteryStatus);
         }
     }
 }
