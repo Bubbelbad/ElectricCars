@@ -11,13 +11,15 @@ namespace ElectricCarMVVM.Models
         Car car = null;
         DatabaseConnection instance = DatabaseConnection.Instance();
         public string ModelName { get; set; }
-        public int BatteryCapacity { get; set; }
+        public string Brand { get; set; }
+        public int Price { get; set; }
 
-        public CarProxy(string modelName, int batteryCapacity)
+        public CarProxy(string modelName, string brand, int price)
         {
             this.instance = instance;
             this.ModelName = modelName;
-            this.BatteryCapacity = batteryCapacity;
+            this.Brand = brand;
+            this.Price = price;
         }
 
 

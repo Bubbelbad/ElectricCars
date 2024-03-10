@@ -14,10 +14,10 @@ namespace ElectricCarMVVM.Models
 
         private DatabaseConnection()
         {
-            cars.Add(new Car("Leaf", 20, 140, 10));
-            cars.Add(new Car("Leaf", 30, 90, 90));
-            cars.Add(new Car("Leaf", 50, 130, 50));
-            cars.Add(new Car("Leaf", 10, 120, 30));
+            cars.Add(new Car("LEAF", "Nissan", 13000, 20, 140, 10));
+            cars.Add(new Car("Ioniq 5" ,"Hyundai", 15000, 30, 90, 90));
+            cars.Add(new Car("EQS", "Mercedes Benz", 16000, 40, 130, 50));
+            cars.Add(new Car("Model S Plaid", "Tesla", 17000, 55, 120, 30));
         }
 
         public static DatabaseConnection Instance()
@@ -42,7 +42,7 @@ namespace ElectricCarMVVM.Models
             List<CarProxy> carProxies = new List<CarProxy>();
             foreach (Car car in cars)
             {
-                carProxies.Add(new CarProxy(car.ModelName, car.BatteryCapacity));
+                carProxies.Add(new CarProxy(car.ModelName, car.Brand, car.Price));
             }
             return carProxies;
         }

@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricCarMVVM.Views"
         mc:Ignorable="d"
-        Title="AddCar" Height="450" Width="800">
+        Title="AddCar" Height="450" Width="400">
     <Grid>
-        
+        <Grid Margin="25,40,25,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <Label Content="Model name: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Battery Capacity: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Milage: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Color: " Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+           
+           
+
+        </Grid>
     </Grid>
 </Window>

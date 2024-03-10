@@ -8,13 +8,13 @@
         Title="MainWindow" Height="650" Width="1000">
     <Grid>
         <Grid Margin="25,40,25,15">
-            <TextBox Name="FilterTextBox" Grid.Row="1" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="35" />
-            <Button Height="30" Command="{Binding ShowWindowCommand}" Content="Add Car" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="25"/>
+            <TextBox Name="FilterTextBox" Grid.Row="1" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,35" />
+            <Button Height="25" Command="{Binding ShowWindowCommand}" Content="Add Car" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="30,35"/>
             <Label Content="Sort by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,35,0,0"/>
             <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0">
                 <Menu>
-                    <MenuItem Header="Ascending"/>
-                    <MenuItem Header="Descending"/>
+                    <MenuItem Header="Brand"/>
+                    <MenuItem Header="Price"/>
                     <MenuItem Header="Milage"/>
                 </Menu>
             </ComboBox>
@@ -22,8 +22,9 @@
             <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand" Width="100" />
                         <GridViewColumn DisplayMemberBinding="{Binding ModelName}" Header="ModelName" Width="100" />
-                        <GridViewColumn DisplayMemberBinding="{Binding BatteryCapacity}" Header="Milage" Width="150" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price" Width="100" />
                     </GridView>
                 </ListView.View>
             </ListView>
