@@ -9,13 +9,7 @@ namespace ElectricCarMVVM.Models
 {
     public class DatabaseConnection
     {
-        /// <summary>
-        /// Fictive singleton database until there is a real database for this project. 
-        /// 
-        /// 
-        /// </summary>
-        /// 
-
+        //Fictive singleton database for this project for easy access.
 
         private static DatabaseConnection _instance;
         private static readonly object _instanceLock = new object();
@@ -31,20 +25,16 @@ namespace ElectricCarMVVM.Models
                                                           new Car { Id = 4, ModelName = "Air", Brand = "Lucid", Price = 77400, Milage = 406, BatteryCapacity = 113, BatteryStatus = 98 },
                                                           new Car { Id = 3, ModelName = "Taycan", Brand = "Porsche", Price = 79900, Milage = 225, BatteryCapacity = 79, BatteryStatus = 90 },
                                                           new Car { Id = 3, ModelName = "R1T", Brand = "Rivian", Price = 67500, Milage = 314, BatteryCapacity = 135, BatteryStatus = 97 } };
-                                                          
-                                                          
-    
+         
+        //I chose to save my CarProxys in a Observable Collection so that it refreshes instantly whenever I add a new car/proxy.
         private static ObservableCollection<CarProxy> carProxies = new ObservableCollection<CarProxy>() {  };
 
-        private DatabaseConnection()
-        {
-
-        }
+        private DatabaseConnection() { }
 
         //Instance() will be used to acces the database from everywhere in theprogram
         public static DatabaseConnection Instance()
         {
-            //Locking the instance so that it can't be called simultaniously by two instances
+            //Locking the instance so that it can't be initiated simultaniously by two instances
             if (_instance == null)
             {
                 lock (_instanceLock)
@@ -68,15 +58,6 @@ namespace ElectricCarMVVM.Models
             return carProxies;
         }
 
-       // public List<CarProxy> GetProxy()
-       // {
-       //     List<CarProxy> carProxies = new List<CarProxy>();
-       //     foreach (Car car in cars)
-       //     {
-       //         carProxies.Add(new CarProxy(car.ModelName, car.Brand, car.Price));
-       //     }
-       //     return carProxies;
-       // }
 
         public void AddCar(Car car, CarProxy proxy)
         {

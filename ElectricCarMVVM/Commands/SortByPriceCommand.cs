@@ -11,6 +11,8 @@ namespace ElectricCarMVVM.Commands
 {
     public class SortByPriceCommand : RelayCommand
     {
+        //This class sorts the proxys by price in MainWindow
+
         ObservableCollection<CarProxy> carProxy;
         public SortByPriceCommand(ObservableCollection<CarProxy> proxy) : base(null, null)
         {
@@ -24,7 +26,7 @@ namespace ElectricCarMVVM.Commands
             return true;
         }
 
-        //INSERTION SORT ALGORITHM
+        //INSERTION SORT ALGORITHM:
         private void Execute(object? obj)
         {
             for (int i = 0; i < carProxy.Count; i++)

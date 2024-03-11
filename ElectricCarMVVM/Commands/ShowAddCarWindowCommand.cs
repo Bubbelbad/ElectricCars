@@ -21,6 +21,7 @@ namespace ElectricCarMVVM.Commands
             return true;
         }
 
+        //Opens new ViewCar Window
         private void Execute(object? parameter)
         {
             var mainWindow = parameter as Window;

@@ -24,12 +24,12 @@ namespace ElectricCarMVVM
         {
             //SINGLETON - Check
             //BUILDER   - Check
-            //COMMANDER - Check ? - Not really sure if I'm implementing this in a correct way. Is there a better solution to save all commands in dictionarys?
-            //PROXY     - Check ? - Am I really using this correctly? I'm very hesistant to this... Feels like I'm missing something here. 
-            //STRATEGY  - Not implemented
+            //COMMANDER - Check
+            //PROXY     - Check
+            //MVVM      - Check
 
-            //Sorting algorithm #1 - Not implemented
-            //Sorting algorithm #2 - Not implemented
+            //Sorting algorithm #1 - Check
+            //Sorting algorithm #2 - Check
 
 
             InitializeComponent();

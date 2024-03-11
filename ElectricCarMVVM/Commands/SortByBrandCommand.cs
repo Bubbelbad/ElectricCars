@@ -11,6 +11,8 @@ namespace ElectricCarMVVM.Commands
 {
     public class SortByBrandCommand : RelayCommand
     {
+        //This class sorts the proxys by brand in MainWindow
+
         ObservableCollection<CarProxy> collection;
         Swapper swapper;
 
@@ -22,7 +24,7 @@ namespace ElectricCarMVVM.Commands
             this.swapper = new Swapper();
         }
 
-        //BUBBLE SORT ALGORITHM
+        //BUBBLE SORT ALGORITHM:
         private void Execute(object? obj)
         {
             for (int i = collection.Count - 1; i > 0; i--)
