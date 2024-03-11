@@ -8,7 +8,12 @@ namespace ElectricCarMVVM.Models
 {
     public class CarProxy
     {
-        Car car = null;
+
+        //I don't understand the Load() function here. Should I return a Car or just a proxy? 
+        //
+        //
+
+        CarProxy car = null;
         DatabaseConnection instance = DatabaseConnection.Instance();
         public string ModelName { get; set; }
         public string Brand { get; set; }
@@ -16,23 +21,11 @@ namespace ElectricCarMVVM.Models
 
         public CarProxy(string modelName, string brand, int price)
         {
-            this.instance = instance;
             this.ModelName = modelName;
             this.Brand = brand;
             this.Price = price;
         }
 
-
-        //  public string ModelName {
-        //      get {
-        //          Load();
-        //          return car.ModelName;
-        //      }
-        //      set {
-        //          Load();
-        //          car.ModelName = value;
-        //      }
-        //  }
 
         public int Milage
         {
@@ -79,10 +72,8 @@ namespace ElectricCarMVVM.Models
             DatabaseConnection instance = DatabaseConnection.Instance();
             if (car == null)
             {
-                // car = instance.GetProxy();
-                // return proxyList;
+              // car = instance.GetCar();
             }
-
         }
     }
 }

@@ -16,10 +16,7 @@ namespace ElectricCarMVVM.Models
         public int BatteryCapacity { get; set; }
         public int BatteryStatus { get; set; }
 
-        public Car()
-        {
-
-        }
+        public Car() { }
 
         public Car(int id, string modelName, string brand, int price, int milage, int batteryCapacity, int batteryStatus)
         {
@@ -31,6 +28,5 @@ namespace ElectricCarMVVM.Models
             this.BatteryCapacity = batteryCapacity;
             this.BatteryStatus = batteryStatus;
         }
-
     }
 }

@@ -36,8 +36,8 @@
             <Label Content="Milage: " Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Color: " Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <TextBox Text="{Binding Brand}" Grid.Column="1" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Price}" Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Milage}" Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Grid.Column="1" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <Button Content="Add Car" Grid.Column="1" Grid.Row="6" Height="25" Width="75" Command="{Binding AddCarCommand}"/>
 

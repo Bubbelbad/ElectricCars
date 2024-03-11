@@ -18,7 +18,7 @@ namespace ElectricCarMVVM.ViewModel
         public ObservableCollection<CarProxy> CarProxyList { get; set; }
         public ICommand ShowAddCarWindowCommand { get; set; }
         public ICommand ShowViewCarWindowCommand { get; set; }
-        public ICommand SortByBrandCommand { get; set; }
+        public ICommand SortByPriceCommand { get; set; }
 
         public MainViewModel()
         {
@@ -26,7 +26,7 @@ namespace ElectricCarMVVM.ViewModel
             CarProxyList = db.GetProxy();
             ShowAddCarWindowCommand = new RelayCommand(ShowAddCarWindow, CanShowWindow);
             ShowViewCarWindowCommand = new RelayCommand(ShowViewCarWindow, CanShowWindow);
-            SortByBrandCommand = new RelayCommand(SortByBrand, CanShowWindow);
+            SortByPriceCommand = new RelayCommand(SortByPrice, CanShowWindow);
 
         }
 
@@ -53,9 +53,12 @@ namespace ElectricCarMVVM.ViewModel
             viewCarWin.Show();
         }
 
-        private void SortByBrand(object obj)
+        private void SortByPrice(object obj)
         {
+            Converter converter = new Converter();
             InsertionSort sorter = new InsertionSort();
+            int[] array = converter.Convert();
+            sorter.Sort(array);
             //sorter.
             MessageBox.Show("We got here");
         }
