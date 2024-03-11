@@ -1,9 +1,12 @@
 
 # ElectricCars
 
+(This program is not entirely done yet, but it runs!)
+
 The purpose of this application was to create an app with 5 design patterns and two sorting algorithms. I chose to make a fictive database that contains data for electric vehicles. The program displays a list of car proxies and the user is able to sort the proxies by brand or price, using two sorting algorithms. 
 
 The user can then click on a specific proxy and it opens a window and retrieves the full car object with all the information about the chosen car. 
+The user can also add new cars to the program using the Builder pattern. 
 
 
 I chose the following patterns and algorithms for the project: 
