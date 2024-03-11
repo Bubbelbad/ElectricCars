@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectricCarMVVM.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ElectricCarMVVM.Models
 {
-    public class Car
+    public class Car : ICar
     {
         public int Id { get; set; }
         public string ModelName { get; set; }

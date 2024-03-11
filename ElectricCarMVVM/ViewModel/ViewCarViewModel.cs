@@ -12,6 +12,7 @@ namespace ElectricCarMVVM.ViewModel
     public class ViewCarViewModel
     {
         Car car;
+        //CarProxy proxy;
         public ICommand ViewCarCommand { get; set; }
 
         public int Id { get; set; }
@@ -22,11 +23,12 @@ namespace ElectricCarMVVM.ViewModel
         public int BatteryCapacity { get; set; }
         public int BatteryStatus { get; set; }
 
-        public ViewCarViewModel(string modelName) //Change this to modelName
+        public ViewCarViewModel(string modelName) //Do I even use the Proxy ??? I don't get this..
         {
             DatabaseConnection db = DatabaseConnection.Instance();
             ViewCarCommand = new RelayCommand(ViewCar, CanViewCar);
             car = db.GetCar(modelName);
+            //this.proxy = proxy;
 
             this.Id = car.Id;
             this.ModelName = car.ModelName;
@@ -45,6 +47,7 @@ namespace ElectricCarMVVM.ViewModel
         private void ViewCar(object obj)
         {
             DatabaseConnection db = DatabaseConnection.Instance();
+            //car = proxy.Load(ModelName);
         }
     }
 }

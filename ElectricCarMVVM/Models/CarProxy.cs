@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectricCarMVVM.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace ElectricCarMVVM.Models
 {
-    public class CarProxy
+    public class CarProxy : ICar
     {
 
         //I don't understand the Load() function here. Should I return a Car or just a proxy? 
-        //
-        //
+       
 
         Car car = null;
         DatabaseConnection instance = DatabaseConnection.Instance();
@@ -24,6 +24,20 @@ namespace ElectricCarMVVM.Models
             this.ModelName = modelName;
             this.Brand = brand;
             this.Price = price;
+        }
+
+        public int Id
+        {
+            get
+            {
+                Load();
+                return car.Id;
+            }
+            set
+            {
+                Load();
+                car.Id = value;
+            }
         }
 
 
@@ -41,16 +55,16 @@ namespace ElectricCarMVVM.Models
             }
         }
 
-          public int BatteryCapacity {
-              get {
-                  Load();
-                  return car.BatteryCapacity;
-              }
-              set {
-                  Load();
-                  car.BatteryCapacity = value;
-              }
-          }
+        public int BatteryCapacity {
+            get {
+                Load();
+                return car.BatteryCapacity;
+            }
+            set {
+                Load();
+                car.BatteryCapacity = value;
+            }
+        }
 
         public int BatteryStatus
         {
@@ -66,7 +80,7 @@ namespace ElectricCarMVVM.Models
             }
         }
 
-
+        //Should this function return Car?? OMG....
         public void Load()
         {
             DatabaseConnection instance = DatabaseConnection.Instance();

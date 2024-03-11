@@ -15,9 +15,8 @@
             <Label Content="Sort by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,35,0,0"/>
             <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0">
                 <Menu>
-                    <MenuItem Header="Brand" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByBrandCommand}"/>
-                    <MenuItem Header="Price"/>
-                    <MenuItem Header="Milage"/>
+                    <MenuItem Header="Brand (BubbleSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByBrandCommand}"/>
+                    <MenuItem Header="Price (InsertionSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByPriceCommand}" />
                 </Menu>
             </ComboBox>
             
