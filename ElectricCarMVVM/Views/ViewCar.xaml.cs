@@ -24,7 +24,7 @@ namespace ElectricCarMVVM.Views
         public ViewCar(CarProxy proxy)
         {
             InitializeComponent();
-            ViewCarViewModel viewModel = new ViewCarViewModel(proxy);
+            ViewCarViewModel viewModel = new ViewCarViewModel(proxy.ModelName);
             this.DataContext = viewModel;
         }
     }

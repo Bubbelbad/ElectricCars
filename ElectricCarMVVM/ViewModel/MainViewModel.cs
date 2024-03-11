@@ -16,6 +16,11 @@ namespace ElectricCarMVVM.ViewModel
     public class MainViewModel
     {
         public ObservableCollection<CarProxy> CarProxyList { get; set; }
+
+        //Will this be useful somehow?:
+        List<string> choiceStrings = new List<string>();
+        Dictionary<string, ICommand> choiceDictionary = new Dictionary<string, ICommand>();
+
         public ICommand ShowAddCarWindowCommand { get; set; }
         public ICommand ShowViewCarWindowCommand { get; set; }
         public ICommand SortByPriceCommand { get; set; }
@@ -24,13 +29,13 @@ namespace ElectricCarMVVM.ViewModel
         {
             DatabaseConnection db = DatabaseConnection.Instance();
             CarProxyList = db.GetProxy();
-            ShowAddCarWindowCommand = new RelayCommand(ShowAddCarWindow, CanShowWindow);
-            ShowViewCarWindowCommand = new RelayCommand(ShowViewCarWindow, CanShowWindow);
-            SortByPriceCommand = new RelayCommand(SortByPrice, CanShowWindow);
+            ShowAddCarWindowCommand = new RelayCommand(ShowAddCarWindow, CanExecute);
+            ShowViewCarWindowCommand = new RelayCommand(ShowViewCarWindow, CanExecute);
+            SortByPriceCommand = new RelayCommand(SortByPrice, CanExecute);
 
         }
 
-        private bool CanShowWindow(object obj)
+        private bool CanExecute(object obj)
         {
             return true;
         }
@@ -61,6 +66,12 @@ namespace ElectricCarMVVM.ViewModel
             sorter.Sort(array);
             //sorter.
             MessageBox.Show("We got here");
+        }
+
+        private void ImportCommands()
+        {
+            //Maybe I can import all commands through here? 
+            //This class doesn't feel like it's Closed to Modification...
         }
     }
 }

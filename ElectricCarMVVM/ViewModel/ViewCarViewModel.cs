@@ -22,11 +22,11 @@ namespace ElectricCarMVVM.ViewModel
         public int BatteryCapacity { get; set; }
         public int BatteryStatus { get; set; }
 
-        public ViewCarViewModel(CarProxy proxy)
+        public ViewCarViewModel(string modelName) //Change this to modelName
         {
             DatabaseConnection db = DatabaseConnection.Instance();
             ViewCarCommand = new RelayCommand(ViewCar, CanViewCar);
-            car = db.GetCar(proxy);
+            car = db.GetCar(modelName);
 
             this.Id = car.Id;
             this.ModelName = car.ModelName;

@@ -8,7 +8,7 @@
         Title="ViewCar" Height="300" Width="600">
    
         <Grid>
-            <Grid x:Name="first" Margin="15,90,25,25" Background="AntiqueWhite" >
+        <Grid x:Name="first" Margin="15,90,25,25" Background="AntiqueWhite" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -34,7 +34,6 @@
             <Label Content="Milage:" Grid.Row="4" Grid.Column="0"/>
             <Label Content="{Binding Milage}" Grid.Row="4" Grid.Column="1"/>
         </Grid>
-
 
         <Label Content="{Binding ModelName}" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="20,20,20,20"/>
         <Label Content="{Binding Brand}" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="20,50,20,20"/>

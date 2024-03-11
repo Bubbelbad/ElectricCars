@@ -16,7 +16,6 @@ namespace ElectricCarMVVM.Models
         private int BatteryCapacity { get; set; } = 0;
         private int BatteryStatus { get; set; } = 0;
 
-
         public CarBuilder(){ }
 
         public CarBuilder SetId(int id)
@@ -24,7 +23,6 @@ namespace ElectricCarMVVM.Models
             Id = id;
             return this;
         }
-
 
         public CarBuilder SetModelName(string modelName)
         {

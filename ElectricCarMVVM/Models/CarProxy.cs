@@ -13,7 +13,7 @@ namespace ElectricCarMVVM.Models
         //
         //
 
-        CarProxy car = null;
+        Car car = null;
         DatabaseConnection instance = DatabaseConnection.Instance();
         public string ModelName { get; set; }
         public string Brand { get; set; }
@@ -72,7 +72,7 @@ namespace ElectricCarMVVM.Models
             DatabaseConnection instance = DatabaseConnection.Instance();
             if (car == null)
             {
-              // car = instance.GetCar();
+               car = instance.GetCar(this.ModelName);
             }
         }
     }
