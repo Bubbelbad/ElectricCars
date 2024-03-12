@@ -1,7 +1,7 @@
 
 # ElectricCars
 
-(This program is not entirely done yet, but it runs!)
+(This program is not entirely done yet, but it runs smooth)
 
 The purpose of this application was to create an app with 5 design patterns and two sorting algorithms. I chose to make a fictive database that contains data for electric vehicles. The program displays a list of car proxies and the user is able to sort the proxies by brand or price, using two sorting algorithms. 
 
@@ -26,9 +26,9 @@ I chose the following patterns and algorithms for the project:
 
 ## Lessons Learned
 
-The MVVM pattern was completely new to me. In the beginning it was hard to understand how to structure the classes. Especially how to use bindings to trigger the desired functions in views from the viewmodels with parameters. 
+The MVVM pattern was completely new to me and in the beginning it was hard to understand how to structure the classes. Especially how to use bindings to trigger the desired functions in views from the viewmodels with parameters! The command pattern was one of the hardest nuts to crack in this regard and I'll definetely need more practise. 
 
-I'm though very pleased with MVVM and it has been SO MUCH FUN to program this and finally understanding MVVM and design patterns a bit more. I think the command pattern was one of the hardest nuts to crack and I'll definetely need more practise. 
+I'm although very pleased with MVVM and it has been SO MUCH FUN to program this! I love the sctructured map system, it makes it so easy to find what I'm looking for and figuring out what class is responsible. I'm really eager to know how to use UserControls and making the UI smooth and still keep simplicity in the structure and without cluttering the main tree.
 
 
 
