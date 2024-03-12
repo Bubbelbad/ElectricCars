@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ViewCar" Height="300" Width="600">
    
-        <Grid>
+        <Grid Background="AliceBlue">
         <Grid x:Name="first" Margin="15,90,25,25" Background="AntiqueWhite" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

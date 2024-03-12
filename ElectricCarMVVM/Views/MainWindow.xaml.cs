@@ -14,24 +14,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ElectricCarMVVM.Models;
+using System.Collections.ObjectModel;
 
 namespace ElectricCarMVVM
 {
     public partial class MainWindow : Window
-    {
+    { 
         MainViewModel viewModel;
+
         public MainWindow()
         {
-            //SINGLETON - Check
-            //BUILDER   - Check
-            //COMMANDER - Check
-            //PROXY     - Check
-            //MVVM      - Check
-
-            //Sorting algorithm #1 - Check
-            //Sorting algorithm #2 - Check
-
-
             InitializeComponent();
             MainViewModel mainViewModel = new MainViewModel();
             this.viewModel = mainViewModel;
@@ -51,7 +43,8 @@ namespace ElectricCarMVVM
         private bool FilterMethod(object obj)
         {
             var car = (CarProxy)obj;
-            return car.ModelName.Contains(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase);
+            return car.ModelName.Contains(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase) || 
+                   car.Brand.Contains(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

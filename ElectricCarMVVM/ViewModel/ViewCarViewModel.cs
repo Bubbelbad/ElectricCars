@@ -23,12 +23,10 @@ namespace ElectricCarMVVM.ViewModel
         public int BatteryCapacity { get; set; }
         public int BatteryStatus { get; set; }
 
-        public ViewCarViewModel(string modelName) //Do I even use the Proxy ??? I don't get this..
+        public ViewCarViewModel(string modelName)
         {
             DatabaseConnection db = DatabaseConnection.Instance();
-            ViewCarCommand = new RelayCommand(ViewCar, CanViewCar);
             car = db.GetCar(modelName);
-            //this.proxy = proxy;
 
             this.Id = car.Id;
             this.ModelName = car.ModelName;
@@ -37,17 +35,6 @@ namespace ElectricCarMVVM.ViewModel
             this.Milage = car.Milage;
             this.BatteryCapacity = car.BatteryCapacity;
             this.BatteryStatus = car.BatteryStatus;
-        }
-
-        private bool CanViewCar(object obj)
-        {
-            return true;
-        }
-
-        private void ViewCar(object obj)
-        {
-            DatabaseConnection db = DatabaseConnection.Instance();
-            //car = proxy.Load(ModelName);
         }
     }
 }

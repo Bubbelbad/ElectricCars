@@ -1,5 +1,6 @@
 ﻿using ElectricCarMVVM.Commands;
 using ElectricCarMVVM.Models;
+using ElectricCarMVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,6 @@ namespace ElectricCarMVVM.ViewModel
 {
     public class AddCarViewModel
     {
-        public ICommand AddCarCommand { get; set; }
-
         public int Id { get; set; }
         public string ModelName { get; set; }
         public string Brand { get; set; }
@@ -23,29 +22,41 @@ namespace ElectricCarMVVM.ViewModel
         public int BatteryCapacity { get; set; }
         public int BatteryStatus { get; set; }
 
+        public ICommand AddCarCommand { get; set; }
 
-        public AddCarViewModel()
+
+        public AddCarViewModel() 
         {
-            AddCarCommand = new RelayCommand(AddCar, CanAddUser);
+            AddCarCommand = new RelayCommand(AddCar, CanAddCar);
         }
 
-        private bool CanAddUser(object obj)
+
+        private bool CanAddCar(object? obj)
         {
             return true;
         }
-
-        private void AddCar(object obj)
+      
+        private void AddCar(object? obj)
         {
+            if (ModelName != null && Brand != null && Price != 0)
+            {
+                MessageBox.Show("Car succesfully added to collection");
+            }
+            else
+            {
+                MessageBox.Show("You need to minimum fill in things model name, brand and price...");
+                return;
+            }
+      
             DatabaseConnection db = DatabaseConnection.Instance();
             CarBuilder carBuilder = new CarBuilder();
-
             Car car = carBuilder.SetModelName(ModelName)
                                 .SetBrand(Brand)
                                 .SetPrice(Price)
                                 .SetMilage(Milage)
                                 .SetBatteryCapacity(BatteryCapacity)
                                 .Build();
-
+      
             CarProxy proxy = new CarProxy(car.ModelName, car.Brand, car.Price);
             db.AddCar(car, proxy);
         }

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricCarMVVM.Views"
         mc:Ignorable="d"
-        Title="AddCar" Height="450" Width="400">
+        Title="AddCar" Height="450" Width="400"
+        Name="addCarClass">
     <Grid>
         <Grid Margin="25,40,25,15">
             <Grid.ColumnDefinitions>
@@ -39,7 +40,7 @@
             <TextBox Text="{Binding Price}" Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Text="{Binding Milage}" Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <TextBox Grid.Column="1" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <Button Content="Add Car" Grid.Column="1" Grid.Row="6" Height="25" Width="75" Command="{Binding AddCarCommand}"/>
+            <Button Content="Save" Grid.Column="1" Grid.Row="6" Height="25" Width="75" CommandParameter="{Binding addCarClass}" Command="{Binding AddCarCommand}"/>
 
         </Grid>
     </Grid>
