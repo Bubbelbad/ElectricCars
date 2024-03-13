@@ -14,16 +14,17 @@
             <Button Height="25" CommandParameter="{x:Reference Name=mainwindow}" Command="{Binding ShowAddCarWindowCommand}" Content="Add Car" Width="80" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="30,35"/>
             <Button Height="25" CommandParameter="{Binding ElementName=CarList,Path=SelectedItem}" Command="{Binding DeleteCarCommand}"  Content="Delete Car" Width="80" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="5" Margin="120,35"/>
             <Label Content="Sort by:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,35,0,0"/>
-            <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0">
-                <Menu>
+            <ComboBox Width="80" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,35,0,0" >
+                <WrapPanel Orientation="Vertical" >
+                    <MenuItem Header="ModelName (QuickSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByModelNameCommand}" HorizontalAlignment="Left" />
                     <MenuItem Header="Brand (BubbleSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByBrandCommand}"/>
-                    <MenuItem Header="Price (InsertionSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByPriceCommand}" />
-                </Menu>
+                    <MenuItem Header="Price (InsertionSort)" CommandParameter="{Binding CarProxyList}" Command="{Binding SortByPriceCommand}"/>
+                </WrapPanel>
             </ComboBox>
-            
-            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0" MouseDoubleClick="CarList_MouseDoubleClick" >
+
+            <ListView Name="CarList" ItemsSource="{Binding CarProxyList}" BorderBrush="#cdcdcd" Margin="25,70,25,25" Padding="0" MouseDoubleClick="CarList_MouseDoubleClick"  >
                 <ListView.View>
-                    <GridView>
+                    <GridView >
                         <GridViewColumn DisplayMemberBinding="{Binding ModelName}" Header="Model name" Width="140" />
                         <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand" Width="140" />
                         <GridViewColumn DisplayMemberBinding="{Binding Price}" Header="Price" Width="140" />

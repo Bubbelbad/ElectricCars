@@ -37,7 +37,6 @@
 
         <Label Content="{Binding ModelName}" FontSize="25" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="20,20,20,20"/>
         <Label Content="{Binding Brand}" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="20,50,20,20"/>
-        <Button Height="25" Content="View techical data" Width="100" Padding="5" HorizontalAlignment="Right" VerticalAlignment="Top" />
     </Grid>
     
 </Window>

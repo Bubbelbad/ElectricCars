@@ -23,12 +23,12 @@ namespace ElectricCarMVVM.Commands
         }
 
         //Opens new viewCar
-        private void Execute(object? obj)
-        {
+        private void Execute(object? obj) //Obj might have to be mainWindow here. See if I can change function to binding in MainWindow.View instead...
+        {                                 //But what do I do with the CarProxy then? Can i have two parameters, send both perhaps?
             var mainWindow = obj as Window;
-            ViewCar viewCarWin = new ViewCar((CarProxy)obj);
+            ViewCar viewCarWin = new ViewCar((CarProxy)obj);  
             viewCarWin.Owner = mainWindow;
-            viewCarWin.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            viewCarWin.WindowStartupLocation = WindowStartupLocation.CenterOwner; //This code is not working! obj is empty I think
             viewCarWin.Show();
         }
     }

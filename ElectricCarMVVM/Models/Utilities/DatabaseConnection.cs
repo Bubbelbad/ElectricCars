@@ -80,15 +80,19 @@ namespace ElectricCarMVVM.Models
 
         internal void DeleteCar(CarProxy proxy)
         {
-            foreach (Car car in cars)
+            if (proxy != null)
             {
-                if (proxy.ModelName == car.ModelName)
+                foreach (Car car in cars)
                 {
-                    cars.Remove(car);
-                    carProxies.Remove(proxy);
-                    return;
+                    if (proxy.ModelName == car.ModelName)
+                    {
+                        cars.Remove(car);
+                        carProxies.Remove(proxy);
+                        return;
+                    }
                 }
             }
+            return;
         }
     }
 }

@@ -11,8 +11,7 @@ namespace ElectricCarMVVM.ViewModel
 {
     public class ViewCarViewModel
     {
-        Car car;
-        //CarProxy proxy;
+        Car car = null; 
         public ICommand ViewCarCommand { get; set; }
 
         public int Id { get; set; }

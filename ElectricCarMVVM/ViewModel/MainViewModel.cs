@@ -23,6 +23,7 @@ namespace ElectricCarMVVM.ViewModel
         public ICommand ShowViewCarWindowCommand { get; set; }
         public ICommand SortByPriceCommand { get; set; }
         public ICommand SortByBrandCommand { get; set; }
+        public ICommand SortByModelNameCommand { get; set; }
         public ICommand DeleteCarCommand { get; set; }
 
         CarProxy selectedProxy;
@@ -35,6 +36,7 @@ namespace ElectricCarMVVM.ViewModel
             ShowViewCarWindowCommand = new ShowViewCarWindowCommand();
             SortByPriceCommand = new SortByPriceCommand(CarProxyList);
             SortByBrandCommand = new SortByBrandCommand(CarProxyList);
+            SortByModelNameCommand = new QuickSortCommand(CarProxyList);
             DeleteCarCommand = new DeleteCarCommand(selectedProxy);
         }
     }
