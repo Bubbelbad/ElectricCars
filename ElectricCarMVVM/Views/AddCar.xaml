@@ -23,23 +23,23 @@
                 <RowDefinition Height="*" />
 
             </Grid.RowDefinitions>
-            <Label Content="Model name: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Label Content="Model name: *" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
             <Label Content="Battery Capacity: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Milage: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Color: " Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding ModelName}" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding ModelName}" TabIndex="0" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding BatteryCapacity}" TabIndex="2" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Milage}" TabIndex="4" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Color}" TabIndex="6" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
 
-            <Label Content="Brand:" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="Price: " Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Brand: *" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Price: *" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Milage: " Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Label Content="Color: " Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <TextBox Text="{Binding Brand}" Grid.Column="1" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Text="{Binding Price}" Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Text="{Binding Milage}" Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
-            <TextBox Grid.Column="1" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Brand}" TabIndex="1" Grid.Column="1" Grid.Row="0" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Price}" TabIndex="3" Grid.Column="1" Grid.Row="1" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Milage}" TabIndex="5" Grid.Column="1" Grid.Row="2" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
+            <TextBox Text="{Binding Milage}" TabIndex="7" Grid.Column="1" Grid.Row="3" Height="25" Width="150" VerticalAlignment="Bottom" HorizontalAlignment="Left"  />
             <Button Content="Save" Grid.Column="1" Grid.Row="6" Height="25" Width="75" CommandParameter="{Binding addCarClass}" Command="{Binding AddCarCommand}"/>
 
         </Grid>
