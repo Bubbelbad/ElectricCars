@@ -35,5 +35,11 @@ I'm although very pleased with MVVM and it has been SO MUCH FUN to program this!
 
 ## Screenshots
 
-![Screen shot](https://github.com/Bubbelbad/ElectricCars/blob/master/Screenshot%202024-03-11%20220940.png)
+Screenshot main window: 
+
+![Screen shot](https://github.com/Bubbelbad/ElectricCars/blob/master/Screenshot%202024-03-15%20215013.png)
+
+Add car view: 
+
+![Screen shot](https://github.com/Bubbelbad/ElectricCars/blob/master/Screenshot%202024-03-15%20215032.png)
 
