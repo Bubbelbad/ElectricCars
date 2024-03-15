@@ -30,19 +30,19 @@ namespace ElectricCarMVVM
             this.DataContext = mainViewModel;
         }
 
-        //This function is bothering me !
+        //Opens the AddCarWindow
         private void CarList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             viewModel.ShowViewCarWindowCommand.Execute(CarList.SelectedItem);
-            //Instead of this above, I should do a Binding directly to ShowWindowCarCommand and somehow.
-            //Send mainWindow (for opening ViewCarWindow in centre) and also send in the selectedItem as parameter... Is it possible as I inherit from RelayCommand?
         }
 
+        //Links the filtermethod to the filtertextbox
         private void FilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             CarList.Items.Filter = FilterMethod;
         }
 
+        //Filter method for the filtertextbox
         private bool FilterMethod(object obj)
         {
             var car = (CarProxy)obj;

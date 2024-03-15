@@ -12,7 +12,6 @@ namespace ElectricCarMVVM.Models.Commands
     public class QuickSortCommand : RelayCommand
     {
         //This class sorts the proxys by brand in MainWindow
-
         ObservableCollection<CarProxy> carProxies;
         Swapper swapper;
 
@@ -30,7 +29,7 @@ namespace ElectricCarMVVM.Models.Commands
             Sort(carProxies, 0, carProxies.Count -1);
         }
 
-
+        //Recursive quick sort algorithm
         private void Sort(ObservableCollection<CarProxy> carProxies, int start, int end)
         {
             if (start < end)
@@ -41,6 +40,7 @@ namespace ElectricCarMVVM.Models.Commands
             }
         }
 
+        //Partitioning the array
         private int Partition(ObservableCollection<CarProxy> carProxies, int start, int end)
         {
             string pivot = carProxies[end].ModelName;

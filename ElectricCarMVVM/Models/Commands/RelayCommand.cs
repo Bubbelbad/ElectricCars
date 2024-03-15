@@ -9,6 +9,8 @@ namespace ElectricCarMVVM.Commands
 {
     public class RelayCommand : ICommand
     {
+        //RelayCommand is a class that implements ICommand interface
+
         public event EventHandler? CanExecuteChanged;
         public Action<Object> _Execute { get; set; }
         public Predicate<Object> _CanExecute { get; set; }
