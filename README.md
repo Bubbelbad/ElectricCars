@@ -28,7 +28,10 @@ I chose the following patterns and algorithms for the project:
 
 The MVVM pattern was completely new to me and in the beginning it was hard to understand how to structure the classes. Especially how to use bindings to trigger the desired functions in views from the viewmodels with parameters! The command pattern was one of the hardest nuts to crack in this regard and I'll definetely need more practise. 
 
-I'm although very pleased with MVVM and it has been SO MUCH FUN to program this! I love the sctructured map system, it makes it so easy to find what I'm looking for and figuring out what class is responsible. I'm really eager to know how to use UserControls and making the UI smooth and still keep simplicity in the structure and without cluttering the main tree.
+For the car proxyList I used an ObservableColletion<T> which gave the benefit of updating the collection in real time (so smooth compared to for-loops and list for ensure it's up to date). 
+I think I could've made the 'CanExecute' function private/protected in the RelayCommand, because non of the derived classes are modifying it and it would look cleaner. 
+
+I'm very pleased with MVVM pattern and it has been SO MUCH FUN to program this! I love the structured map system, it makes it so easy to find what I'm looking for and gives a clear view of the responsibility of the classes. For future projects I'm eager to use UserControls and making the UI smooth while keeping simplicity in the structure, without cluttering the main tree.
 
 
 
